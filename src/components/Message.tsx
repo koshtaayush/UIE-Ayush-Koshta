@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import dateFormatter from './../services/dateFormatter';
 import { SENDER_NAME } from './../config/config';
 import { IMessage } from './../typings/sharedInterface';

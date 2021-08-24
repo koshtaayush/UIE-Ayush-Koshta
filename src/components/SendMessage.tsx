@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Input from './../shared/Input';
 import Button from './../shared/Button';
+
 import { makePost } from './../services/api.service';
 import { POST_MESSAGE_API_ENDPOINT } from './../constants/api.constants';
 import { SENDER_NAME } from './../config/config';

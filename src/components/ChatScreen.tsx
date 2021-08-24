@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import bodyBackground from './../assets/bodyBackground.png';
+import { IMessage } from './../typings/sharedInterface';
+
 import SendMessage from './SendMessage';
 import MessageList from './MessageList';
-import { IMessage } from './../typings/sharedInterface';
 
 interface Props {}
 

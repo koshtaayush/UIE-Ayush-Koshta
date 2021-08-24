@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+
 import { makeGet } from '../services/api.service';
 import { GET_ALL_MESSAGES, GET_MESSAGES_AFTER_TIMESTAMP } from './../constants/api.constants';
-import Message from './Message';
 import useInterval from './../hooks/useInterval'
 import { IMessage } from './../typings/sharedInterface';
+
+import Message from './Message';
 
 interface Props{
     myAdditionalMessages: Array<IMessage>
