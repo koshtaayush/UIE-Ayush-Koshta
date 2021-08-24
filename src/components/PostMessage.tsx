@@ -64,20 +64,32 @@ const PostMessage: React.FC<Props> = (props) => {
     return (
         <React.Fragment>
             <SendMessageContainer>
-                <Label>Author (mandatory): </Label>
-                <Value><Input 
-                    onChangeProp={(v) => handleAuthorChange(v)}
-                    inputValue={authorValue}></Input>
-                </Value>
+                <Field>
+                    <Label>Author (mandatory): </Label>
+                    <Value>
+                        <Input 
+                            onChangeProp={(v) => handleAuthorChange(v)}
+                            inputValue={authorValue}
+                            placeHolderText={'Author'}></Input>
+                    </Value>
+                </Field>
                 
-                <Label>Message (mandatory): </Label>
-                <Value>
-                    <Input 
-                    onChangeProp={(v) => handleMessageChange(v)}
-                    inputValue={messageValue}></Input>
-                </Value>
+                <Field>
+                    <Label>Message (mandatory): </Label>
+                    <Value>
+                        <Input 
+                        onChangeProp={(v) => handleMessageChange(v)}
+                        inputValue={messageValue}
+                        placeHolderText={'Message'}></Input>
+                    </Value>
+                </Field>
 
-                <Button onClick={() => handlePostMessage()}>Send</Button>
+                
+                <ButtonContainer>
+                    <Button 
+                        buttonType="L"
+                        onClick={() => handlePostMessage()}>Send</Button>
+                </ButtonContainer>
 
                 {showRequiredFieldsError &&
                 <RequiredFieldsError>
@@ -93,10 +105,30 @@ const PostMessage: React.FC<Props> = (props) => {
 export default PostMessage
 
 const SendMessageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
 `
 
-const Label  = styled.div``
+const Field  = styled.div`
 
-const Value  = styled.div``
+`
+
+const Label  = styled.div`
+    margin-bottom: 10px;
+
+`
+
+const Value  = styled.div`
+    margin-bottom: 10px;
+
+`
+
+const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+`
 
 const RequiredFieldsError  = styled.div``

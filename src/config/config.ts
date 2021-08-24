@@ -1,0 +1,1 @@
+export const SENDER_NAME = 'Ayush';
