@@ -36,6 +36,8 @@ const PostMessage: React.FC<Props> = (props) => {
             .then((res) => res.json())
             .then((resp) => {
                 setApiSuccess('Posted message successfully');
+                setMessageValue('');
+                setAuthorValue('');
             }, (err) => {
                 console.log("Error", err);
                 setApiError(err);
@@ -87,10 +89,17 @@ const PostMessage: React.FC<Props> = (props) => {
                         onClick={() => handlePostMessage()}>Send</Button>
                 </ButtonContainer>
 
-                {showRequiredFieldsError &&
-                <RequiredFieldsError>
-                    Please fill the required fields
-                </RequiredFieldsError>}
+                <ErrorContainer>
+                    {showRequiredFieldsError &&
+                    <ErrorMessage>
+                        Please fill the required fields
+                    </ErrorMessage>}
+                    
+                    {apiError !== '' && <SuccessMessage>{apiError}</SuccessMessage>}
+
+                    {apiSuccess !== '' && <SuccessMessage>{apiSuccess}</SuccessMessage>}
+                    
+                </ErrorContainer>
             </SendMessageContainer>
 
 
@@ -123,4 +132,25 @@ const ButtonContainer = styled.div`
     margin-top: 1rem;
 `
 
-const RequiredFieldsError  = styled.div``
+const ErrorContainer= styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+`
+
+const ErrorMessage  = styled.div`
+    margin-top: 0.25rem;
+    color: #f5222d;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+`
+
+const SuccessMessage  = styled.div`
+    margin-top: 0.25rem;
+    color: #00a300;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+`

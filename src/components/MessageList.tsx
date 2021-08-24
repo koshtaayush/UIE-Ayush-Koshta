@@ -20,7 +20,7 @@ const MessageList: React.FC<Props> = (props) => {
 
     const scrollToBottom = () => {
         const chat = document.getElementById("messageSet") as any;
-        if(chat.offsetHeight != 0){
+        if(chat.offsetHeight !== 0){
             chat.scrollTop = chat.scrollHeight;
         }
     };
@@ -44,7 +44,7 @@ const MessageList: React.FC<Props> = (props) => {
                 setFetchedTimestamp((new Date()).getTime());
                 setListOfMessages([...listOfMessages, ...resp]);
                 nullifyAdditionalMessage()
-                if(resp.length != 0){
+                if(resp.length !== 0){
                     scrollToBottom();
                 }
             }, (err) => {

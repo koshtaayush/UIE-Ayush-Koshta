@@ -62,7 +62,6 @@ const MessageContainer = styled.div<IMessageContainer>`
 const Author = styled.div`
     color: #6d6d7a;
     margin-bottom: 0.375rem;
-
 `
 
 const MessageText = styled.div`
@@ -73,5 +72,4 @@ const MessageText = styled.div`
 const Time = styled.div<ITime>`
     color: #6d6d7a;
     text-align: ${(props) => props.isMyMessage ? 'end' : 'start'};
-
 `
