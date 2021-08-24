@@ -3,37 +3,35 @@ import styled from 'styled-components';
 import bodyBackground from './../assets/bodyBackground.png';
 import SendMessage from './SendMessage';
 import MessageList from './MessageList';
+import { IMessage } from './../typings/sharedInterface';
 
 interface Props {}
 
 const ChatScreen: React.FC<Props> = () => {
     
-    const [myAdditionalMessages, setMyAdditionalMessages] = React.useState([]);
+    const [myAdditionalMessages, setMyAdditionalMessages] = React.useState<Array<IMessage>>([]);
 
-    const addCurrentMessages = (currentMessage: any) => {
-        let temp = []
-        temp.push(currentMessage)
-        let arr: any = [...myAdditionalMessages, ...temp]
-        setMyAdditionalMessages(arr)
+    const addCurrentMessages = (currentMessage: IMessage) => {
+        setMyAdditionalMessages([...myAdditionalMessages, ...[currentMessage]])
     }
 
-    const nullifyAdditionalMessage = () => {
+    const nullifyAdditionalMessage = (): void => {
         setMyAdditionalMessages([]);
     }
 
     return (
         <React.Fragment>
-            <ContainerBox>
-                <WhiteBackground>
+            <ChatApplicationSection>
                 <ChatApplication>
                     <Container>
-                        <MessageList myAdditionalMessages={myAdditionalMessages} nullifyAdditionalMessage={nullifyAdditionalMessage} />
-                        <SendMessage addCurrentMessages={addCurrentMessages} />
+                        <MessageList 
+                            myAdditionalMessages={myAdditionalMessages} 
+                            nullifyAdditionalMessage={nullifyAdditionalMessage} />
+                        <SendMessage 
+                            addCurrentMessages={addCurrentMessages} />
                     </Container>
                 </ChatApplication>
-                </WhiteBackground>
-            </ContainerBox>
-
+            </ChatApplicationSection>
         </React.Fragment>
     )
 
@@ -42,16 +40,11 @@ const ChatScreen: React.FC<Props> = () => {
 
 export default ChatScreen
 
-
-const ContainerBox = styled.div`
+const ChatApplicationSection = styled.div`
     height: 100%;
-`
-
-const WhiteBackground  = styled.div`
     display: flex;
     justify-content: center;
     background: url(${bodyBackground});
-    height: 100%;
 `
 
 const ChatApplication = styled.div`

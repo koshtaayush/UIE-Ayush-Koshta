@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props{
-    onChangeProp?: (val: string) => void
-    inputValue?: string
+    onChangeProp: (val: string) => void
+    inputValue: string
     placeHolderText: string
 }
 

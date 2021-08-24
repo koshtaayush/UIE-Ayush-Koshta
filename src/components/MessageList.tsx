@@ -4,24 +4,17 @@ import { makeGet } from '../services/api.service';
 import { GET_ALL_MESSAGES, GET_MESSAGES_AFTER_TIMESTAMP } from './../constants/api.constants';
 import Message from './Message';
 import useInterval from './../hooks/useInterval'
+import { IMessage } from './../typings/sharedInterface';
 
 interface Props{
-    myAdditionalMessages: Array<message>
+    myAdditionalMessages: Array<IMessage>
     nullifyAdditionalMessage: () => void
-}
-
-interface message {
-    message: string,
-    author: string,
-    timestamp: number,
-    token: number,
-    _id: string
 }
 
 const MessageList: React.FC<Props> = (props) => {
 
-    const [listOfMessages, setListOfMessages] = React.useState([]);
-    let [fetchedTimestamp, setFetchedTimestamp] = React.useState(0);  
+    const [listOfMessages, setListOfMessages] = React.useState<Array<IMessage>>([]);
+    const [fetchedTimestamp, setFetchedTimestamp] = React.useState(0);  
 
     const { myAdditionalMessages, nullifyAdditionalMessage } = props;
 
@@ -34,11 +27,8 @@ const MessageList: React.FC<Props> = (props) => {
 
     useEffect(() => {
         handleFetchMessages()
-        console.log("setging up timsetamp", (new Date()).getTime()  )
         setFetchedTimestamp((new Date()).getTime());
         scrollToBottom()
-        return function cleanup() {
-        }
     }, [])
 
     useInterval(() => {
@@ -47,15 +37,12 @@ const MessageList: React.FC<Props> = (props) => {
     // }, 5000 * 10000)
 
     const fetchMessagesAfterTimestamp = () => {
-        console.log("fetchedTimestamp", fetchedTimestamp)
-        const url = GET_MESSAGES_AFTER_TIMESTAMP + 'since=' + fetchedTimestamp + '&limit=10&token=XfHdvAfPm3FB';
-        makeGet(url)
+        const fetchMessagesUrl = GET_MESSAGES_AFTER_TIMESTAMP + 'since=' + fetchedTimestamp + '&limit=10&';
+        makeGet(fetchMessagesUrl)
             .then((res) =>  res.json())
             .then((resp) => {
                 setFetchedTimestamp((new Date()).getTime());
-                console.log("resp", resp)
-                let arr: any = [...listOfMessages, ...resp]
-                setListOfMessages(arr);
+                setListOfMessages([...listOfMessages, ...resp]);
                 nullifyAdditionalMessage()
                 if(resp.length != 0){
                     scrollToBottom();
@@ -69,15 +56,12 @@ const MessageList: React.FC<Props> = (props) => {
     }
 
     const handleFetchMessages = () => {
-
-        const url = GET_ALL_MESSAGES;
-        makeGet(url)
+        const fetchAllMessagesUrl = GET_ALL_MESSAGES;
+        makeGet(fetchAllMessagesUrl)
             .then((res) =>  res.json())
             .then((resp) => {
-                console.log("resp", resp)
                 setListOfMessages(resp);
                 scrollToBottom()
-
             }, (err) => {
                 console.log("err", err)
             })
@@ -89,12 +73,12 @@ const MessageList: React.FC<Props> = (props) => {
     return (
         <React.Fragment>
             <MessageSet id="messageSet">
-                  {listOfMessages.map((message) => {
-                      return <Message message={message} key={message['id']} />
+                  {listOfMessages.map((message: IMessage) => {
+                      return <Message message={message} key={message._id} />
                   })}
 
-                  {myAdditionalMessages.map((message: any) => {
-                      return <Message message={message} key={message['id']} />
+                  {myAdditionalMessages.map((message: IMessage) => {
+                      return <Message message={message} key={message._id} />
                   })}
             </MessageSet>
         </React.Fragment>

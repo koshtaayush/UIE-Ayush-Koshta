@@ -2,20 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import dateFormatter from './../services/dateFormatter';
 import { SENDER_NAME } from './../config/config';
+import { IMessage } from './../typings/sharedInterface';
 
 interface Props{
-    message: {
-        message: string,
-        author: string,
-        timestamp: number,
-        token: number,
-        _id: string
-    }
+    message: IMessage
 }
 
 const Message: React.FC<Props> = (props) => {
 
     const { message }  = props;
+
     return (
         <IncomingMessage isMyMessage={message.author === SENDER_NAME}>
             <MessageContainer isMyMessage={message.author === SENDER_NAME}>
@@ -44,7 +40,6 @@ interface IMessageContainer{
 }
 
 const IncomingMessage  = styled.div<IIncomingMessage>`
-    background: lighten(#777777, 23%);
     display: flex;
     align-items: center;
     justify-content: ${(props) => props.isMyMessage ? 'flex-end' : 'flex-start'};

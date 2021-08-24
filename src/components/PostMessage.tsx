@@ -7,17 +7,15 @@ import Button from './../shared/Button';
 import { makePost } from './../services/api.service';
 import { POST_MESSAGE_API_ENDPOINT } from './../constants/api.constants';
 
-interface Props {
-
-}
+interface Props {}
 
 const PostMessage: React.FC<Props> = (props) => {
 
-    const [messageValue, setMessageValue]=  React.useState('');
-    const [authorValue, setAuthorValue] = React.useState('');
-    const [apiError, setApiError] = React.useState('');
-    const [apiSuccess, setApiSuccess] = React.useState('');
-    const [showRequiredFieldsError, setShowRequiredFieldsError]= React.useState(false)
+    const [messageValue, setMessageValue]=  React.useState<string>('');
+    const [authorValue, setAuthorValue] = React.useState<string>('');
+    const [apiError, setApiError] = React.useState<string>('');
+    const [apiSuccess, setApiSuccess] = React.useState<string>('');
+    const [showRequiredFieldsError, setShowRequiredFieldsError]= React.useState<boolean>(false)
 
 
     const handlePostMessage = () => {
@@ -49,12 +47,12 @@ const PostMessage: React.FC<Props> = (props) => {
 
     }
 
-    const handleMessageChange = (v: string) => {
-        setMessageValue(v)
+    const handleMessageChange = (changedMessage: string) => {
+        setMessageValue(changedMessage)
     }
 
-    const handleAuthorChange = (v: string) => {
-        setAuthorValue(v)
+    const handleAuthorChange = (changedAuthor: string) => {
+        setAuthorValue(changedAuthor)
     }
 
 
@@ -108,18 +106,14 @@ const SendMessageContainer = styled.div`
     padding: 2rem;
 `
 
-const Field  = styled.div`
-
-`
+const Field  = styled.div``
 
 const Label  = styled.div`
     margin-bottom: 10px;
-
 `
 
 const Value  = styled.div`
     margin-bottom: 10px;
-
 `
 
 const ButtonContainer = styled.div`

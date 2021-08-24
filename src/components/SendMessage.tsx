@@ -15,10 +15,10 @@ const SendMessage: React.FC<Props> = (props) => {
 
     const { addCurrentMessages } = props;
 
-    const [messageValue, setMessageValue]=  React.useState('');
+    const [messageValue, setMessageValue]=  React.useState<string>('');
 
-    const handleMessageChange = (v: string) => {
-        setMessageValue(v)
+    const handleMessageChange = (changedMessage: string) => {
+        setMessageValue(changedMessage)
     }
 
     const handlePostMessage = () => {
@@ -36,6 +36,7 @@ const SendMessage: React.FC<Props> = (props) => {
             }, (err) => {
                 console.log("Error", err);
             }).catch((error) => {
+                console.log("Error", error);
             })
 
     }
@@ -77,7 +78,6 @@ const SendMessageContainer = styled.div`
 const InputSection  = styled.div`
     width: 80%;
     padding: 8px;
-
 `
 
 const ButtonSection = styled.div`

@@ -1,11 +1,11 @@
+import { API_TOKEN } from './../config/config'
 
 const makePost = (url: string, data: object) => {
-  
   const options = {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      'token': 'XfHdvAfPm3FB',
+      'token': API_TOKEN,
       'Content-Type': 'application/json'
     }
   };
@@ -14,7 +14,8 @@ const makePost = (url: string, data: object) => {
 
 
 const makeGet = (url: string) => {
-  return fetch(url);
+  let urlWithToken = `${url}token=${API_TOKEN}`
+  return fetch(urlWithToken);
 };
 
 export { makePost, makeGet };
