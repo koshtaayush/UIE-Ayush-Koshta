@@ -91,5 +91,5 @@ const MessageSet  = styled.div`
     position: relative;
     overflow-y: scroll;
     height: 100%;
-    padding: 24px;
+    padding: 1.5rem;
 `

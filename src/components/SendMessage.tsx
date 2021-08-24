@@ -6,9 +6,10 @@ import Button from './../shared/Button';
 import { makePost } from './../services/api.service';
 import { POST_MESSAGE_API_ENDPOINT } from './../constants/api.constants';
 import { SENDER_NAME } from './../config/config';
+import { IMessage } from './../typings/sharedInterface';
 
 interface Props {
-    addCurrentMessages: (v: any) => void
+    addCurrentMessages: (msg: IMessage) => void
 }
 
 const SendMessage: React.FC<Props> = (props) => {
@@ -71,16 +72,16 @@ const SendMessageContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 0px;
-    max-width: 640px;
+    bottom: 0rem;
+    max-width: 40rem;
 `
 
 const InputSection  = styled.div`
     width: 80%;
-    padding: 8px;
+    padding: 0.5rem;
 `
 
 const ButtonSection = styled.div`
     width: 20%;
-    margin-left: 8px;
+    margin-left: 0.5rem;
 `

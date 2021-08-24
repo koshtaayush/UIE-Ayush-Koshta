@@ -109,11 +109,11 @@ const SendMessageContainer = styled.div`
 const Field  = styled.div``
 
 const Label  = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 `
 
 const Value  = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 `
 
 const ButtonContainer = styled.div`

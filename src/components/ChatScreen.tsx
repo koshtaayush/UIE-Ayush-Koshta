@@ -52,13 +52,13 @@ const ChatApplication = styled.div`
     justify-content: flex-end;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 7.5rem);
     width: 100%;
-    max-width: 640px;
+    max-width: 40rem;
 `
 
 const Container  = styled.div`
     height: 100%;
     width: 100%;
-    max-width: 640px;
+    max-width: 40rem;
 `

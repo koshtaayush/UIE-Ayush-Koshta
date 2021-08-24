@@ -46,28 +46,28 @@ const IncomingMessage  = styled.div<IIncomingMessage>`
 `
 
 const MessageContainer = styled.div<IMessageContainer>`
-    border: 1px solid #6d6d7a;
+    border: 0.0625rem solid #6d6d7a;
     padding: 1rem;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
     color: $white;
     font-size: 0.7em;
-    padding: 10px 10px 10px 12px;
-    border-radius: 4px;
+    padding: 0.625rem 0.625rem 0.625rem 0.75rem;
+    border-radius: 0.25rem;
     background-color: ${(props) => props.isMyMessage ? '#FCF6C5' : '#fff'}; ;
 `
 
 const Author = styled.div`
     color: #6d6d7a;
-    margin-bottom: 6px;
+    margin-bottom: 0.375rem;
 
 `
 
 const MessageText = styled.div`
-    margin-bottom: 6px;
-    line-height: 16px;
+    margin-bottom: 0.375rem;
+    line-height: 1rem;
 `
 
 const Time = styled.div<ITime>`
