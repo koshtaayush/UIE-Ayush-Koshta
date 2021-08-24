@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import bodyBackground from './bodyBackground.png';
+import bodyBackground from './../assets/bodyBackground.png';
 import SendMessage from './SendMessage';
 import MessageList from './MessageList';
+
 interface Props {}
 
 const ChatScreen: React.FC<Props> = () => {
@@ -48,15 +49,12 @@ const ContainerBox = styled.div`
 
 const WhiteBackground  = styled.div`
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     background: url(${bodyBackground});
     height: 100%;
 `
 
 const ChatApplication = styled.div`
-    /* background: url(${bodyBackground}); */
-    /* padding: 24px; */
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -67,7 +65,6 @@ const ChatApplication = styled.div`
 `
 
 const Container  = styled.div`
-    /* max-width: 640px; */
     height: 100%;
     width: 100%;
     max-width: 640px;

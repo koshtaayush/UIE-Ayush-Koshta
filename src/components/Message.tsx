@@ -44,17 +44,14 @@ interface IMessageContainer{
 }
 
 const IncomingMessage  = styled.div<IIncomingMessage>`
-    /* width: 50%; */
     background: lighten(#777777, 23%);
     display: flex;
     align-items: center;
     justify-content: ${(props) => props.isMyMessage ? 'flex-end' : 'flex-start'};
-    /* background-color: #FCF6C5; */
 `
 
 const MessageContainer = styled.div<IMessageContainer>`
     border: 1px solid #6d6d7a;
-    /* background-color: #fff; */
     padding: 1rem;
     margin-bottom: 8px;
     position: relative;

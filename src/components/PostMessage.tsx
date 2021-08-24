@@ -50,12 +50,10 @@ const PostMessage: React.FC<Props> = (props) => {
     }
 
     const handleMessageChange = (v: string) => {
-        console.log("v", v)
         setMessageValue(v)
     }
 
     const handleAuthorChange = (v: string) => {
-        console.log("v", v)
         setAuthorValue(v)
     }
 

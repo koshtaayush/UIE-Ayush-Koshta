@@ -13,7 +13,6 @@ const Input: React.FC<Props> = (props) => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
-        console.log(value)
         if(onChangeProp){
             onChangeProp(value)
         }

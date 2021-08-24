@@ -5,6 +5,7 @@ import Input from './../shared/Input';
 import Button from './../shared/Button';
 import { makePost } from './../services/api.service';
 import { POST_MESSAGE_API_ENDPOINT } from './../constants/api.constants';
+import { SENDER_NAME } from './../config/config';
 
 interface Props {
     addCurrentMessages: (v: any) => void
@@ -17,7 +18,6 @@ const SendMessage: React.FC<Props> = (props) => {
     const [messageValue, setMessageValue]=  React.useState('');
 
     const handleMessageChange = (v: string) => {
-        console.log("v", v)
         setMessageValue(v)
     }
 
@@ -25,13 +25,12 @@ const SendMessage: React.FC<Props> = (props) => {
         
         const data = {
             message: messageValue,
-            author: "Ayush"
+            author: SENDER_NAME
         }
 
         makePost(POST_MESSAGE_API_ENDPOINT, data)
             .then((res) => res.json())
             .then((resp) => {
-                console.log("resp");
                 addCurrentMessages(resp);
                 setMessageValue('')
             }, (err) => {
@@ -66,8 +65,6 @@ export default SendMessage
 
 const SendMessageContainer = styled.div`
     background-color: #3798D4;
-    /* padding: 8px; */
-    /* margin-bottom: -24px; */
     width: inherit;
     display: flex;
     align-items: center;

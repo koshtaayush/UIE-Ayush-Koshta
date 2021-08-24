@@ -20,21 +20,14 @@ interface message {
 
 const MessageList: React.FC<Props> = (props) => {
 
-    let fetchMessagesPoll: any = null
-
     const [listOfMessages, setListOfMessages] = React.useState([]);
     let [fetchedTimestamp, setFetchedTimestamp] = React.useState(0);  
 
     const { myAdditionalMessages, nullifyAdditionalMessage } = props;
 
-    console.log("myAdditionalMessages", myAdditionalMessages)
-    console.log("listOfMessages", listOfMessages)
-
     const scrollToBottom = () => {
         const chat = document.getElementById("messageSet") as any;
-        console.log("moving to bottom", chat.offsetHeight)
         if(chat.offsetHeight != 0){
-            // chat.scrollTop = chat.offsetHeight;
             chat.scrollTop = chat.scrollHeight;
         }
     };
