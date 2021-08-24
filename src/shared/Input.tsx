@@ -32,11 +32,11 @@ const Input: React.FC<Props> = (props) => {
 export default Input
 
 const InputBox = styled.input`
-    border: 2px solid #2E77A4;
+    border: 0.125rem solid #2E77A4;
     caret-color: #2E77A4;
     color: #000;
     height: 3em;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     width: 100%;
-    padding: 8px;
+    padding: 0.5rem;
 `

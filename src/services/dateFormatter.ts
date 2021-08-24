@@ -1,3 +1,8 @@
+/**
+  * Function to change unix to human readable date format
+  * Returns in format DD MMM YYYY HH:MM
+*/
+
 const formatUnixTime = (unix_timestamp: number) => {
   
     var a = new Date(Number(unix_timestamp));

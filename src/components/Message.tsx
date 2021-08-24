@@ -10,6 +10,7 @@ interface Props{
 
 const Message: React.FC<Props> = (props) => {
 
+    // Message prop
     const { message }  = props;
 
     return (

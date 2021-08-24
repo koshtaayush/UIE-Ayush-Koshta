@@ -1,5 +1,9 @@
-export const POST_MESSAGE_API_ENDPOINT = 'https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0';
+//Constants being used
 
-export const GET_MESSAGES_AFTER_TIMESTAMP = 'https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0/?';
+const BASE_URL = 'https://chatty.kubernetes.doodle-test.com/api/';
 
-export const GET_ALL_MESSAGES = 'https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0/?'
+export const POST_MESSAGE_API_ENDPOINT = BASE_URL + 'chatty/v1.0';
+
+export const GET_MESSAGES_AFTER_TIMESTAMP = BASE_URL + 'chatty/v1.0/?';
+
+export const GET_ALL_MESSAGES = BASE_URL + 'chatty/v1.0/?'

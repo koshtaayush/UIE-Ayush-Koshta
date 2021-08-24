@@ -33,11 +33,11 @@ interface IButtonContainer{
 const ButtonContainer  = styled.button<IButtonContainer>`
     background-color: #FF876D;
     color: #FFFFFF;
-    height: 56px;
+    height: 3.5rem;
     border: none;
-    margin-left: 8px;
-    border-radius: 4px;
-    padding: ${(props) => props.buttonType === 'S' ? '8px' : '16px'};
+    margin-left: 0.5rem;
+    border-radius: 0.25rem;
+    padding: ${(props) => props.buttonType === 'S' ? '0.5rem' : '1rem'};
     cursor: pointer;
-    width: calc(100% - 16px);
+    width: calc(100% - 1rem);
 `

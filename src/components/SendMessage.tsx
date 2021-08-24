@@ -14,14 +14,22 @@ interface Props {
 
 const SendMessage: React.FC<Props> = (props) => {
 
+    //Props
     const { addCurrentMessages } = props;
 
+    //Current message value which user is typing
     const [messageValue, setMessageValue]=  React.useState<string>('');
 
+    /**
+     * Function which is called to handle message change from input box
+     */
     const handleMessageChange = (changedMessage: string) => {
         setMessageValue(changedMessage)
     }
 
+    /**
+     * Function which is called to submit message
+     */
     const handlePostMessage = () => {
         
         const data = {

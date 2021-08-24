@@ -18,6 +18,9 @@ const PostMessage: React.FC<Props> = (props) => {
     const [showRequiredFieldsError, setShowRequiredFieldsError]= React.useState<boolean>(false)
 
 
+    /**
+     * Function which is called to submit message
+     */
     const handlePostMessage = () => {
 
         if(messageValue === '' || authorValue === ''){
@@ -49,10 +52,16 @@ const PostMessage: React.FC<Props> = (props) => {
 
     }
 
+    /**
+     * Function which is called to handle message change from input box
+     */
     const handleMessageChange = (changedMessage: string) => {
         setMessageValue(changedMessage)
     }
 
+    /**
+     * Function which is called to handle author change from input box
+     */
     const handleAuthorChange = (changedAuthor: string) => {
         setAuthorValue(changedAuthor)
     }

@@ -9,12 +9,20 @@ interface Props {}
 
 const ChatScreen: React.FC<Props> = () => {
     
+    // The message sent by the current user gets temporarily stored in the local state 
+    //    (which is just being used to render the message) to avoid excess fetch API call
     const [myAdditionalMessages, setMyAdditionalMessages] = React.useState<Array<IMessage>>([]);
 
+    /**
+     * Function to add the message sent by user to temporary list
+     */
     const addCurrentMessages = (currentMessage: IMessage) => {
         setMyAdditionalMessages([...myAdditionalMessages, ...[currentMessage]])
     }
 
+    /**
+     * Function to clear the temporary message list after the API call
+     */
     const nullifyAdditionalMessage = (): void => {
         setMyAdditionalMessages([]);
     }
