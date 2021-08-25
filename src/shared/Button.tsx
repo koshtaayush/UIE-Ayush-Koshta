@@ -2,21 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props{
-    onClick: () =>  void
+    onClickProp: () =>  void
     buttonType: 'S' | 'L'
 }
 
 const Button: React.FC<Props> = (props) => {
 
-    const {onClick, buttonType} = props;
+    const {onClickProp, buttonType} = props;
     return (
         <React.Fragment>
                 <ButtonContainer
                     type="button"
                     name="sendMessage"
-                    onClick={onClick}
+                    onClick={onClickProp}
                     disabled={false}
-                    buttonType={buttonType}>
+                    buttonType={buttonType}
+                    test-id={'buttonTest'}>
                         Send
                 </ButtonContainer>        
         </React.Fragment>

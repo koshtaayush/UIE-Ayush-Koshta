@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatScreen Should match the snapshot 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <MessageList
+          myAdditionalMessages={Array []}
+          nullifyAdditionalMessage={[Function]}
+        />
+        <SendMessage
+          addCurrentMessages={[Function]}
+          test-id="sendMessageBar"
+        />
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;

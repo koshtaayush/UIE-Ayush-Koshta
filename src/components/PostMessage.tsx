@@ -95,7 +95,7 @@ const PostMessage: React.FC<Props> = (props) => {
                 <ButtonContainer>
                     <Button 
                         buttonType="L"
-                        onClick={() => handlePostMessage()}>Send</Button>
+                        onClickProp={() => handlePostMessage()}>Send</Button>
                 </ButtonContainer>
 
                 <ErrorContainer>

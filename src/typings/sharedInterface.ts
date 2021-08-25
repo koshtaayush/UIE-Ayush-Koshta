@@ -2,6 +2,6 @@ export interface IMessage {
     message: string,
     author: string,
     timestamp: number,
-    token: number,
+    token: string,
     _id: string
 }

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendMessage Should match the snapshot 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div
+      test-id="inputSection"
+    >
+      <Input
+        inputValue=""
+        onChangeProp={[Function]}
+        placeHolderText="Message"
+      />
+    </styled.div>
+    <styled.div
+      test-id="buttonSection"
+    >
+      <Button
+        buttonType="S"
+        onClickProp={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;

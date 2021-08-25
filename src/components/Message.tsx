@@ -17,10 +17,10 @@ const Message: React.FC<Props> = (props) => {
     return (
         <IncomingMessage isMyMessage={message.author === SENDER_NAME}>
             <MessageContainer isMyMessage={message.author === SENDER_NAME}>
-                {!(message.author === SENDER_NAME) && <Author >{message.author}</Author>}
-                <MessageText>{message.message}</MessageText>
+                {!(message.author === SENDER_NAME) && <Author test-id="author">{message.author}</Author>}
+                <MessageText test-id="message">{message.message}</MessageText>
 
-                <Time isMyMessage={message.author === SENDER_NAME}>{dateFormatter(message.timestamp)}</Time>
+                <Time isMyMessage={message.author === SENDER_NAME} test-id="timeStamp">{dateFormatter(message.timestamp)}</Time>
             </MessageContainer>
         </IncomingMessage>
     )
@@ -48,21 +48,21 @@ const IncomingMessage  = styled.div<IIncomingMessage>`
 `
 
 const MessageContainer = styled.div<IMessageContainer>`
-    border: 0.0625rem solid #6d6d7a;
+    border: 0.0625rem solid #6D6D7A;
     padding: 1rem;
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
     margin-bottom: 0.3125rem;
-    color: $white;
     font-size: 0.7em;
     padding: 0.625rem 0.625rem 0.625rem 0.75rem;
     border-radius: 0.25rem;
-    background-color: ${(props) => props.isMyMessage ? '#FCF6C5' : '#fff'}; ;
+    max-width: 50%;
+    background-color: ${(props) => props.isMyMessage ? '#FCF6C5' : '#FFFFFF'}; ;
 `
 
 const Author = styled.div`
-    color: #6d6d7a;
+    color: #6D6D7A;
     margin-bottom: 0.375rem;
 `
 
@@ -72,6 +72,6 @@ const MessageText = styled.div`
 `
 
 const Time = styled.div<ITime>`
-    color: #6d6d7a;
+    color: #6D6D7A;
     text-align: ${(props) => props.isMyMessage ? 'end' : 'start'};
 `

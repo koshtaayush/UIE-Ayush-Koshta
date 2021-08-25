@@ -38,6 +38,7 @@ const ChatScreen: React.FC<Props> = () => {
                             myAdditionalMessages={myAdditionalMessages} 
                             nullifyAdditionalMessage={nullifyAdditionalMessage} />
                         <SendMessage 
+                            test-id="sendMessageBar"
                             addCurrentMessages={addCurrentMessages} />
                     </Container>
                 </ChatApplication>

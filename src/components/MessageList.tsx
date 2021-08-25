@@ -5,6 +5,7 @@ import { makeGet } from '../services/api.service';
 import { GET_ALL_MESSAGES, GET_MESSAGES_AFTER_TIMESTAMP } from './../constants/api.constants';
 import useInterval from './../hooks/useInterval'
 import { IMessage } from './../typings/sharedInterface';
+import { POLLING_INTERVAL } from './../config/config';
 
 import Message from './Message';
 
@@ -43,8 +44,7 @@ const MessageList: React.FC<Props> = (props) => {
     //Polling mechanism to fetch the recent messages
     useInterval(() => {
         fetchMessagesAfterTimestamp()
-    }, 10000)
-    // }, 5000 * 10000)
+    }, POLLING_INTERVAL)
 
     /**
      * Function which is called to fetch messages after a given timestamp

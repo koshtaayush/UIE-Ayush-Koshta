@@ -24,7 +24,8 @@ const Input: React.FC<Props> = (props) => {
                     type="text" 
                     placeholder={placeHolderText} 
                     onChange={handleInputChange}
-                    value={inputValue} />
+                    value={inputValue} 
+                    test-id="input" />
         </React.Fragment>
     )
 }

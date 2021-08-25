@@ -54,17 +54,17 @@ const SendMessage: React.FC<Props> = (props) => {
     return (
         <React.Fragment>
             <SendMessageContainer>
-                <InputSection>
+                <InputSection test-id="inputSection">
                     <Input 
                         onChangeProp={(v) => handleMessageChange(v)}
                         inputValue={messageValue}
                         placeHolderText={'Message'}></Input>
                 </InputSection>
 
-                <ButtonSection>
+                <ButtonSection test-id="buttonSection">
                     <Button 
                         buttonType="S"
-                        onClick={() => handlePostMessage()}>
+                        onClickProp={() => handlePostMessage()}>
                     </Button>
                 </ButtonSection>
             </SendMessageContainer>

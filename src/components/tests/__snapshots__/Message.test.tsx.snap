@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message Should match the snapshot 1`] = `
+<styled.div
+  isMyMessage={false}
+>
+  <styled.div
+    isMyMessage={false}
+  >
+    <styled.div
+      test-id="author"
+    >
+      Tom
+    </styled.div>
+    <styled.div
+      test-id="message"
+    >
+      Hello world
+    </styled.div>
+    <styled.div
+      isMyMessage={false}
+      test-id="timeStamp"
+    >
+      20 Aug 2021 1:34
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
