@@ -53,4 +53,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 3. More exhaustive test cases implementation
 4. Animations around the chat interface
 
+### Screenshots
+<img width="1677" alt="Screenshot 2021-08-25 at 2 28 46 PM" src="https://user-images.githubusercontent.com/14069441/130767768-be0e2234-c215-4c17-a350-85e59f701f76.png">
 
+
+<img width="938" alt="Screenshot 2021-08-25 at 2 29 00 PM" src="https://user-images.githubusercontent.com/14069441/130768215-71a793c5-e4c0-46aa-8390-f7b57163cd85.png">
+
+
+<img width="700" alt="Screenshot 2021-08-25 at 2 29 29 PM" src="https://user-images.githubusercontent.com/14069441/130768276-4a0cba0d-a254-401d-ac33-ff1d5b371ba2.png">
+
+
+<img width="1437" alt="Screenshot 2021-08-25 at 2 29 44 PM" src="https://user-images.githubusercontent.com/14069441/130768343-048aeff3-feab-477c-a269-fdc63fd6f54d.png">
