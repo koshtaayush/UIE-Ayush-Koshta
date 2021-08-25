@@ -23,12 +23,4 @@ describe('SendMessage', () => {
         expect(component.find({ 'test-id': 'buttonSection' })).toHaveLength(1);
     })
     
-    it('Should render proper text for send button', () => {
-
-        const mockFn = jest.fn()
-        
-        const component = shallow(<SendMessage addCurrentMessages={mockFn} />);  
-        expect(component.find({ 'test-id': 'buttonSection' }).text()).toEqual('Send')
-    })
-    
 })
