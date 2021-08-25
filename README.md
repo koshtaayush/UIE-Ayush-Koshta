@@ -2,9 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Node and NPM Version Used
+## Running the project in local
+The following version has been used for this application
 The node version used : v10.16.3
 The npm version used : 6.9.0
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm start`
+The project should be up and running in http://localhost:3000/
 ## Available Scripts
 
 In the project directory, you can run:
