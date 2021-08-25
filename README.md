@@ -53,6 +53,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 3. More exhaustive test cases implementation
 4. Animations around the chat interface
 
+### Accessibility
+1. You can navigate to different components of the chat window by pressing tab
+2. On pressing enter, when the control is on send button it triggers the POST call
+3. If time permits, enter functionality on input box also could have been built
+
+### Things to Note
+1. Currently the token is present in the code. Ideally the whole config file should be present as environment configs.
+
 ### Screenshots
 <img width="1677" alt="Screenshot 2021-08-25 at 2 28 46 PM" src="https://user-images.githubusercontent.com/14069441/130767768-be0e2234-c215-4c17-a350-85e59f701f76.png">
 
