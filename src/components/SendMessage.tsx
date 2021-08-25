@@ -56,7 +56,7 @@ const SendMessage: React.FC<Props> = (props) => {
             <SendMessageContainer>
                 <InputSection test-id="inputSection">
                     <Input 
-                        onChangeProp={(v) => handleMessageChange(v)}
+                        onChangeProp={(val) => handleMessageChange(val)}
                         inputValue={messageValue}
                         placeHolderText={'Message'}></Input>
                 </InputSection>
